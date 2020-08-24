@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			input[type=text], input[type=password], input[type=name]{width:250px; height:20px;}
+			td:first-child{text-align:center; font-weight:bold; background-color:#e9e8ed; width:160px;height:40px;}
+			input[type=button]{border:1px solid #3d7cc3;color:#3d7cc3;background:#FFF;font-size:16px;}
+			input[type=submit]{color: #FFF;background: #042f6c;border: 1px solid #042f6c;font-size: 20px;}
+			p{color:#A500CF;}
+		</style>
+	</head>
+	<body>
+		<div style="width: 800px; margin: 0 auto;">
+			<img alt="EBS" src="../img/EBS.JPG" style="vertical-align: middle;">
+			<span style="vertical-align: middle;">회원가입</span>
+			
+			<!-- <div style="background-color:black; height:3px"></div> -->
+			<hr style="border:1px solid black;">
+			
+			<br><br>
+			<h3><img alt="정보입력 및 본인확인" src="../img/right.JPG"><sup>정보입력 및 본인확인</sup></h3>
+			
+			<form action="../0821/result.jsp" method="post">
+				<table border="1" width="750px" style="border-collapse:collapse;">
+				 	<tr>
+				 		<td>아이디</td>
+				 		<td>&nbsp;<input type="text" name="id">&nbsp;<input type="button" value="중복확인" onclick="alert('사용할 수 있는 아이디입니다.')"></td>
+				 	</tr>
+				 	<tr>
+				 		<td>비밀번호</td>
+				 		<td>&nbsp;<input type="password" name="pwd"></td>
+				 	</tr>
+				 	<tr>
+				 		<td>비밀번호확인</td>
+				 		<td>&nbsp;<input type="password" name="pwdck"></td>
+				 	</tr>
+				 	<tr>
+				 		<td>이름</td>
+				 		<td>&nbsp;<input type="name" name="name"></td>
+				 	</tr>
+				 	<tr>
+				 		<td>성별</td>
+				 		<td>&nbsp;
+				 			<input type="radio" name="gender" value="male">남성&nbsp;<input type="radio" name="gender" value="female">여성
+				 			<input type="checkbox" name="genderInfo">&nbsp;선택정보(성별) 수집 및 이용 동의	
+				 		</td>
+				 	</tr>
+				 	<tr>
+				 		<td>생년월일</td>
+				 		<td>&nbsp;
+				 			<select name="year">
+								<option>2020</option>
+								<option>2019</option>
+								<option>2018</option>
+								<option>2017</option>
+								<option>2016</option>
+								<option>2015</option>
+							</select>년	
+							<select name="month">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+							</select>월	
+							<select name="day">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+							</select>일
+				 		</td>
+				 	</tr>
+				 	<tr>
+				 		<td>이메일</td>
+				 		<td>&nbsp;<input type="text" name="email" style="width:230px">@<input type="text" name="email2" style="width:230px">
+				 			<p>아이디나 비밀번호를 찾기위해 사용되오니 정확한 정보로 입력하시기 바랍니다.</p>
+				 		</td>
+				 	</tr>
+				 	<tr>
+				 		<td>휴대폰</td>
+				 		<td>&nbsp;<input type="text" name="ph">&nbsp;<input type="checkbox" name="phoneInfo">선택정보(휴대폰) 수집 및 이용 동의</td>
+				 	</tr>
+				 	<tr>
+				 		<td>인증방법</td>
+				 		<td>&nbsp;
+					 		<input type="radio" name="certify" value="phone">휴대폰&nbsp;&nbsp;
+					 		<input type="radio" name="certify" value="email">이메일
+					 		<input type="button" name="certification" value="인증" onclick="alert('인증되었습니다.')">
+					 	</td>
+				 	</tr>
+				 	<tr>
+				 		<td>인증번호</td>
+				 		<td>&nbsp;
+					 		<input type="text" name="certificationNumber">
+					 		<input type="button" name="checking" value="확인" onclick="alert('확인되었습니다.')">
+					 	</td>
+				 	</tr>
+				 </table>
+			</div>
+			<div style="text-align: center;">
+			 	<br>
+			 	<!-- <button >확인</button> -->
+			 	<input type="submit" value="확인">
+			</div>
+		</form>
+	</body>
+</html>
