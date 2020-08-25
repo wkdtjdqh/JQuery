@@ -23,6 +23,11 @@
 	border-top:4px double blue;
 	border-bottom:4px double blue;
 }
+.box pre{
+	font-size:1.2em;
+	background-color:#4284ed;
+	color:white;
+}
 .box #result1, .box .dd{
 	border:1px dotted orange;
 	padding:10px;
