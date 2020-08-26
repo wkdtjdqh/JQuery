@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style>
+			.box #result1, .box div{
+				width:500px;
+				height:300px;
+				border:1px solid blue;
+				margin:5px;
+				padding:10px;
+			}
+			#result1{background-image:linear-gradient(red, blue);}
+			#result2{background-image:linear-gradient(to right, red, blue);}
+			#result3{background-image:linear-gradient(45deg, red, blue);}
+			#result4{background-image:linear-gradient(blue, skyblue 50%, darkblue);}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3></h3>
+			<input type="button" value="확인">
+			<div id="result1">background-image:linear-gradient(red, blue)</div>
+			<div id="result2">background-image:linear-gradient(to right, red, blue)</div>
+			<div id="result3">background-image:linear-gradient(45deg, red, blue)</div>
+			<div id="result4">background-image:linear-gradient(blue, skyblue 50%, darkblue)</div>
+		</div>
+	</body>
+</html>
