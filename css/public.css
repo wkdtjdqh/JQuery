@@ -13,6 +13,9 @@
 	border
 		border-radius:5px; 모서리를 5px만큼 깎는다.
 		border-radius:5px 10px; 11시방향, 5시방향이 5px. 1시방향과 7시방향이 10px
+		border : 2px solid red
+		   border-width, border-style, border-color를 한번에 지정, border-style은 필수적으로 들어가야 한다.
+		
 */
 	
 .box{
