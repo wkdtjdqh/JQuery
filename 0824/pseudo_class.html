@@ -18,7 +18,8 @@
 			a:active{font-size:1.5em; color:blue; text-decoration:underline;}
 			a{/* border:2px solid blue; */ padding:10px; margin:10px;}
 			
-			table{}
+			table{border-collapse:collapse;}
+			
 			td{width:200px; height:50px; text-align:center;}
 			tr:nth-child(even){background:lightblue;}
 			tr:nth-child(odd){background:white;}
@@ -29,6 +30,11 @@
 			#tab2 tr:nth-child(1){background:black; color:white;}
 			
 			h3[title]{background:skyblue;}
+			caption{
+				margin:20px auto;
+				caption-side:bottom;
+				font-size:1.5em;
+			}
 		</style>
 	</head>
 	<body>
@@ -67,10 +73,14 @@
 			 -->
 			구조 : :nth-child(index) :nth-child(even) :nth-child(odd) :nth-child(2n) <!-- 2의 배수 --><br>
 			<input type="button" value="확인">
-			<br>
+			<br><br>
+			테두리 의 선합치기 border-collapse:collapse;<br>
+			테이블 제목 &lt;caption&gt;VIP&lt;/caption&gt;
+			<br><br>
 			<div id="result1">
 			구조에 의한 선택 <br><br>
 				<table border="1">
+					<caption>VIP</caption>
 					<tr>
 						<td>이름</td>
 						<td>주소</td>
