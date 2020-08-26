@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style>
+			#result1 > ul{
+				list-style-type:none;
+				border-top:2px solid blue;
+				border-bottom:2px solid blue;
+				height:100px;
+			}
+			#result1 li{
+				float:left;
+				margin:20px 50px;
+				padding:10px;
+				letter-spacing:30px;
+			}
+			#result1 li:hover{background:lime;}
+			#result1 li:active{text-decoration:underline; color:blue;}
+			.box{
+				height:400px;
+			}
+			.box #result1{
+				height:200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3>수평 리스트</h3>
+			<input type="button" value="확인">
+			<div id="result1">
+				<ul>
+					<li>개나리</li>
+					<li>진달래</li>
+					<li>무궁화</li>
+					<li>라일락</li>
+					<li>수선화</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
