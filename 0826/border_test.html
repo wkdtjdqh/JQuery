@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style>
+			.box #result1, #result2, #result3, #result4, #result5, #result6, #result7, #result8{
+				border:1px solid skyblue;
+				padding:40px;
+				margin:5px;
+			}
+			.box #result1{border-width:20px 10px 5px; border-style:solid double; border-color:blue red orange;}
+			#result2{border:4px double blue; border-radius:100px;}
+			#result3{border-width:10px; border-style:inset; border-color:darkblue; border-radius:100px 50px;}
+			#result4{border:10px outset blue; border-radius:0px 200px 100px}
+			#result5{border-top:3px dotted red; border-bottom:5px solid blue; border-radius:50%}
+			#result6{
+				border-left-width:10px; border-left-style:dashed; border-left-color:lightblue;
+				border-right:5px dashed red; border-radius:50%;
+				width:400px; height:400px;
+			}
+			#result7{border:20px groove green; border-radius:50px 100px 200px 300px;}
+			#result8{border:20px ridge green; box-shadow:20px 10px 5px #666666; width:500px;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3>border 설정</h3>
+			<div id="result1">border-width:20px 10px 5px; border-style:solid double; border-color:blue red orange;</div>
+			<div id="result2">border:4px double blue; border-radius:100px;</div>
+			<div id="result3">border-width:10px; border-style:inset; border-color:darkblue; border-radius:100px 50px;</div>
+			<div id="result4">border:10px outset blue; border-radius:0px 200px 100px</div>
+			<div id="result5">border-top:3px dotted red; border-bottom:5px solid blue; border-radius:50%</div>
+			<div id="result6">
+				<br><br>
+				border-left-width:10px; border-left-style:dashed; border-left-color:lightblue;<br>
+				border-right:5px dashed red; border-radius:50%;<br>
+				width:400px; height:400px;
+			</div>
+			<div id="result7">border:20px groove green; border-radius:50px 100px 200px 300px;</div>
+			<div id="result8">border:20px ridge green; box-shadow:20px 10px 5px #666666; width:500px;</div>
+		</div>
+	</body>
+</html>
