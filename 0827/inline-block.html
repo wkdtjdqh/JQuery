@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style>
+			span{
+				background:skyblue;
+				/*  인라인요소는 변경이 불가능하다.
+					width:50%;
+					height:60px;
+				 */
+				display:inline-block;	/* display를 통해서 변경 가능 */
+				width:50%;
+				height:60px;
+			}
+			p{
+				background:white;
+				width:50%;
+				height:60px;
+			}
+			.box #result1{
+				display:none;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				/* id가 result1인 요소를 검색 */
+				res1 = document.getElementById('result1');
+				/* var res1 = document.querySelector('#result1'); 
+					var를 지정해주면 지역변수가 된다.
+				*/
+								
+				/* span태그와 p태그 검색 */
+				vsp = document.getElementsByTagName('span');
+				/* sp = document.querySelectorAll('span'); */
+				vp = document.getElementsByTagName('p');
+			}
+			function proc1(){
+				res1.style.display = 'block';
+				vsp[0].style.display = 'none';
+				vp[0].style.display = 'none';
+			}
+			function proc2(){
+				res1.style.display = 'none';
+				vsp[0].style.display = 'block';
+				vp[0].style.display = 'block';
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>display</h3>
+			display에는 none, block, inline, inline-block이 있다.<br>
+			확인버튼을 클릭하면 div id=result1인 요소를 보이게 하고 span, p태그는 안보이게 한다.<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<input type="button" value="확인" onclick="proc2()"><br>
+			<span>무궁화 꽃이 피었습니다.</span>
+			<p>무궁화 꽃이 피었습니다.</p>
+			<div id="result1">
+				
+			</div>
+		</div>
+	</body>
+</html>
