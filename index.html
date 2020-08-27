@@ -34,9 +34,9 @@
 				float:right;
 				background-image:linear-gradient(to right, skyblue, white);
 			}
-			p{
+			/* p{
 				clear:both;
-			}
+			}*/
 			.in{
 				width:200px;
 				height:200px;
@@ -45,6 +45,16 @@
 				padding:5px;
 				float:left;
 				background-image:radial-gradient(white, skyblue);
+			}
+			footer{
+				//background:rgba(0%, 0%, 255%, 0.8); /* rgba를 통해서 선명도를 조절할 수 있다. */
+				background-image:linear-gradient(to right, skyblue, #1a53ff);
+				height:200px;
+				padding:10px;
+				clear:both;
+			}
+			header p{
+				text-align:center;
 			}
 		</Style>
 	</head>
@@ -97,10 +107,21 @@
 					<li><a href="0826/gradient_background.html">gradient background</a></li>
 				</ul>
 			</div>
-			<div class="in"></div>
+			<div class="in">
+				<h3>0827</h3>
+				<ul>
+					<li><a href="0827/image.html">image</a></li>
+					<li><a href="0827/inline-block.html">inline block</a></li>
+					<li><a href="0827/layout-test.html">layout test</a></li>
+					<li><a href="0827/위치설정.html">위치설정</a></li>
+				</ul>
+			</div>
 			<div class="in"></div>
 			<div class="in"></div>
 		</div>
-		<p>머에요</p>
+		<footer>
+		<!-- <div id="footer"></div> 자주 쓰는 id를 태그로 만들었다.-->
+			
+		</footer>
 	</body>
 </html>
