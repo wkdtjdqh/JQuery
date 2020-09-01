@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script>
+			function proc1(){
+				// 입력받기
+				let value1 = prompt("첫번째 정수를 입력하세요", "1~100사이");
+				let value2 = prompt("두번째 정수를 입력하세요", "1~100사이");
+				
+				sumstr = value1 + value2;
+				sum = parseInt(value1) + parseInt(value2);
+				
+				// 출력
+				vr1 = document.querySelector('#result1');
+				vr1.innerHTML = "입력1 : " + value1 + "<br>";
+				vr1.innerHTML += "입력2 : " + value2 + "<br>";
+				vr1.innerHTML += "결과 : " + sumstr + "<br>";
+				vr1.innerHTML += "결과 : " + sum + "<br>";
+			}
+			function proc2(){
+				let value1 = prompt("첫번째 정수를 입력하세요", "1~100사이");
+				let value2 = prompt("두번째 정수를 입력하세요", "1~100사이");
+				let value3 = prompt("연산자를 입력하세요", "+, -, *, /, %");
+				
+				/* 
+				if(value3 == '+'){
+					result = parseInt(value1) + parseInt(value2);
+				} else if(value3 == '-'){
+					result = parseInt(value1) - parseInt(value2);
+				} else if(value3 == '*'){
+					result = parseInt(value1) * parseInt(value2);
+				} else if(value3 == '/'){
+					result = parseInt(value1) / parseInt(value2);
+				} else if(value3 == '%'){
+					result = parseInt(value1) % parseInt(value2);
+				}
+				 */
+				 
+				switch(value3){
+				case "+" : result = parseInt(value1) + parseInt(value2); break;
+				case "-" : result = parseInt(value1) - parseInt(value2); break;
+				case "*" : result = parseInt(value1) * parseInt(value2); break;
+				case "/" : result = parseInt(value1) / parseInt(value2); break;
+				case "%" : result = parseInt(value1) % parseInt(value2); break;
+				}
+				
+				vr1 = document.querySelector('#result2');
+				
+				/* 
+					vr1.innerHTML = "입력1 : " + value1 + "<br>";
+					vr1.innerHTML += "입력2 : " + value2 + "<br>";
+					vr1.innerHTML += "결과 : " + result + "<br>"; 
+				*/
+				
+				vr1.innerHTML = value1 + value3 + value2 + "=" + result;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>입력받기</h3>
+			prompt("입력하세요", "12345");<br>
+			parameter1 : 필수<br>
+			parameter2 : 선택<br>
+			리턴결과형 : string<br>
+			리턴결과값을 정수로 변환 후 덧셈연산을 한다.<br>
+			parseInt(입력값)<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1">
+				
+			</div>
+		</div>
+		<div class="box">
+			<h3>입력받기</h3>
+			정수 2개와 연산자1개를 입력받아 연산의 결과를 출력<br>
+			입력 : prompt("정수1")<br>
+			출력 : result2<br>
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="result2">
+				
+			</div>
+		</div>
+	</body>
+</html>

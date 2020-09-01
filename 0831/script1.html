@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script>
+			function proc1(){
+				/* alert 메세지 창을 띄어주는 내장함수 */
+				alert('hello');
+				// date객체 생성
+				let now = new Date();
+				// document.write(now);	// 새로운 윈도우 document를 만들기 때문에 잘 사용하지 않는다.
+				
+				// html요소 id가 result1인 요소를 검색
+				// document.querySelector('#result1');
+				let vres = document.getElementById('res1');
+				vres.innerHTML = now;
+			}
+			function proc2(){
+				now = new Date();
+				datetime = now.toLocaleString();
+				date = now.toLocaleDateString();
+				time = now.toLocaleTimeString();
+				
+				vr2 = document.getElementById('res2');
+				vr2.innerHTML = "toLocaleString : " + datetime + "<br>";
+				vr2.innerHTML += "toLocaleDateString : " + date + "<br>";
+				vr2.innerHTML += "toLocaleTimeString : " + time + "<br>";
+				
+				/* 
+					vr2.textContent = datetime + "<br>";
+					vr2.textContent += date + "<br>";
+					vr2.textContent += time + "<br>";
+				 */
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>script</h3>
+			변수선언 : var 변수명;<br>
+			Es6 : let 변수명; const 변수명; 변수명;<br>
+			변수명만 사용하면 전역변수, var는 함수영역(지역변수), let은 블럭영역, const는 상수(값을 변형시키지 말아야 할 때 사용)<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="res1"></div>
+		</div>
+		
+		<div class="box">
+			<h3>script</h3>
+			날짜 형식 변경<br>
+			now.toLocaleString()<br>
+			now.toLocaleDateString()<br>
+			now.toLocaleTimeString()<br><br>
+			출력<br>
+			vr2.innerHTML = 내용 -> 내용 속에 html태그가 있으면 사용<br>
+			vr2.textContent = 내용 -> 내용 속에 html태그가 없으면 사용<br>
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="res2"></div>
+		</div>
+	</body>
+</html>
