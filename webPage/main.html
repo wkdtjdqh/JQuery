@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>my web</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style>
+			header, nav, aside, section, footer{ border-radius:20px; border:2px solid black; margin:10px;}
+			header h1, header img{ display:inline-block; vertical-align: middle;}
+			header{	width:auto;	clear:both;	text-align:center; padding:5px;	}
+			nav{ width:auto; height:70px; clear:both; } 
+			nav div{ margin-left:auto; margin-right:auto; width:97%; }
+			nav div ul{ border-top:2px solid black; height:35px; border-bottom:2px solid black; list-style-type:none; }
+			nav div li{ float:left; letter-spacing:10px; font-size:15px; margin-left:160px; margin-top:5px; }
+			section, aside{ height:750px; }
+			section{ float:left; width:52%; margin-left:35px;}
+			section iframe{ margin:auto; margin-top:10px; width:100%; height:96%; border:0px; }
+			aside{ width:21%; }
+			#a1{ float:left; }
+			#a2{ float:right; }
+			#a1 div{ border:2px solid black; border-radius:10px; margin:10px; margin-top:45px; padding:10px; }
+			#a1 div a{text-decoration:none; color:black;}
+			#a2 div{ margin:15px; margin-bottom:50px; }
+			#a2 #a2p{ padding-top:50px; padding-bottom:50px; border:1px solid black; border-radius:10px; }
+			#a2 #d2 p{ margin-bottom:5px; }
+			#a2 input[type=text], #a2 input[type=password]{ width:300px;}
+			#a2 input[type=button]{ margin:15px 10px 5px 0px;}
+			footer{ width:auto; clear:both; text-align:center; padding:20px; }
+			#d1{ width:1900px; }
+			#home{ text-decoration:none; }
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+		<header><img src="../img/cat.jpg" width="100px">&nbsp;<h1>Web Shopping</h1></header>
+			<nav>
+				<div><ul><li><a href="main.html" id="home">HOME</a></li><li><a href="main.html" id="home">SHOPPING ABOUT</a></li><li><a href="main.html" id="home">NEWS</a></li><li><a href="main.html" id="home">MY ACCOUNT</a></li><li><a href="main.html" id="home">CONTACTS</a></li></ul></div>
+			</nav>
+			<aside id="a1">
+				<div><a href="cat.html" target="ifr">고양이 구경</a></div>
+				<div><a href="computer.html" target="ifr">컴퓨터</a></div>
+				<div><a href="clothing.html" target="ifr">의류</a></div>
+				<div><a href="music.html" target="ifr">음악</a></div>
+				<div><a href="movie.html" target="ifr">영화</a></div>
+				<div><a href="sports.html" target="ifr">스포츠/레져</a></div>
+				<div><a href="가구.html" target="ifr">가구/인테리어</a></div>
+				<div><a href="food.html" target="ifr">식품</a></div>
+			</aside>
+			<aside id="a2">
+				<div><h1>Shopping Cart</h1><p id="a2p">&nbsp;현재 쇼핑카트에 물품이 없습니다.</p>&nbsp;<a href="shopingCart.html" target="ifr">쇼핑카트 보기</a></div>
+				<div id="d2">
+					<h1>Log In</h1><p>아이디</p><input type="text" name="id"><p>비밀번호</p><input type="password" name="pass">
+					<input type="button" value="로그인"><input type="button" value="초기화">
+					<p><a href="join.html" target="ifr">회원가입</a>&nbsp;&nbsp;<a href="">비밀번호 분실</a></p>
+				</div>
+			</aside>
+			<section><iframe src="cat.html" name="ifr"></iframe></section>
+		<footer>Copyright (c)2020 Jang</footer>
+		</div>
+	</body>
+</html>
