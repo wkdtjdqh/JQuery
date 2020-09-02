@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+	</head>
+	<script>
+		// 리터럴에 의한 객체정의
+		// 속성 - width, height 메소드 - 면적, 둘레 구하기
+		var Rect = {
+				width : 20,
+				height : 5,
+				getArea : function(){
+					return this.width * this.height
+				},
+				getCircum : function(){
+					return (this.width + this.height) * 2
+				}
+		};
+		
+		// 객체정의 동적 추가
+		var Rect2 = { };
+		function proc1(){
+			// Rect객체의 가로, 세로, 면적, 둘레 정보를 출력한다.
+			res = "가로 : " + Rect.width + "<br>세로 : " + Rect.height + "<br>면적 : " + Rect.getArea() + "<br>둘레 : " + Rect.getCircum();
+			
+			Rect.name = "네모";
+			res += "<br>이름 : " + Rect.name;
+			Rect2.width = 15;
+			Rect2.height = 15
+			Rect2.getArea = function(){ return this.width * this.height };
+			Rect2.getCircum = function(){ return (this.width + this.height) * 2 };
+			// 객체에 아무것도 선언되지 않아도 동적으로 추가할 수 있다.
+			res += "<br><br>가로 : " + Rect2.width + "<br>세로 : " + Rect2.height + "<br>면적 : " + Rect2.getArea() + "<br>둘레 : " + Rect2.getCircum();
+			document.querySelector('#res1').innerHTML = res;
+		}
+		
+		// 생성자에 의한 객체정의
+		function Circle(rad){
+			this.rad = rad;
+			this.getArea = function(){
+				/* 3.14 * rad * rad; */
+				return Math.PI * Math.pow(this.rad, 2);
+			};
+			this.getCircum = function(){
+				/* 2 * 3.14 * rad */
+				return Math.PI * 2 * this.rad;
+			};
+		};
+		function proc2(){
+			var cir = new Circle(7);
+			cir.name = "원";
+			
+			res = "반지름 : " + cir.rad + "<br>면적 : " + cir.getArea() + "<br>둘레 : " + cir.getCircum() + "<br>이름 : " + cir.name;
+			document.querySelector('#res2').innerHTML = res;
+		}
+	</script>
+	<body>
+		<div class="box">
+			<h3>객체정의 - 리터럴에 의한 정의</h3>
+			객체정의 <br>
+			1. 속성 - width, height 메소드 - 면적구하기, 둘레구하기로 정의하는 객체<br>
+			2. 속성과 메소드 없이 객체의 형태(껍데기)만 정의하는 객체 var Rect = { }<br>
+			&nbsp;- 나중에 필요시 동적으로 추가해서 사용할 수 있다.<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="res1">
+				
+			</div>
+		</div>
+		
+		<div class="box">
+			<h3>객체정의 - 생성자에 의한 정의</h3>
+			객체정의 : function Circle(rad)<br>
+			1. 속성 - rad(반지름) 메소드 - 면적구하기, 둘레구하기로 정의하는 객체<br>
+			&nbsp;- 나중에 필요시 동적으로 추가해서 사용할 수 있다.<br>
+			&nbsp;- new Circle(7)로 생성해서 사용한다.<br>
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="res2">
+				
+			</div>
+		</div>
+	</body>
+</html>

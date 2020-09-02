@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script>
+			var Circle = {
+				name : "원형"
+			};
+			function proc1(){
+				Circle.rad = 7;
+				Circle.getArea = function(){
+					return Math.PI * Math.pow(this.rad, 2);
+				}
+				Circle.getCircum = function(){
+					return Math.PI * 2 * this.rad;
+				}
+				
+				res = "이름 : " + Circle.name + "<br>반지름 : " + Circle.rad + "<br>면적 : " + Circle.getArea() + "<br>둘레 : " + Circle.getCircum();
+				document.querySelector('#res1').innerHTML = res;
+			}
+			
+			function Rect(width, height){
+				this.width = width;
+				this.height = height;
+				this.getArea = function(){
+					return this.width * this.height;
+				}
+				this.getCircum = function(){
+					return (this.width + this.height) * 2;
+				}
+			}
+			function proc2(){
+				var r = new Rect(45, 45);
+				r.name = "정사각형";
+				res = "이름 : " + r.name + "<br>가로 : " + r.width + "<br>세로 : " + r.height + "<br>면적 : " + r.getArea() + "<br>둘레 : " + r.getCircum();
+				document.querySelector('#res2').innerHTML = res;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>리터럴로 객체 정의</h3>
+			Circle<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="res1"> </div>
+		</div>
+		<div class="box">
+			<h3>생성자로 객체 정의</h3>
+			Rect<br>
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="res2"> </div>
+		</div>
+	</body>
+</html>

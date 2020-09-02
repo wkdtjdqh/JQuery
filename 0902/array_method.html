@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<style type="text/css">
+			#result1, #result2, #result3{
+				border:1px dotted blue;
+				padding:10px;
+				margin:5px;
+			}
+		</style>
+		<script type="text/javascript">
+			arr = ["사과", "바나나", "참외", "복숭아", "사과", "자두", "바나나"]
+			function proc1(){
+				str = prompt("찾는 문자열 입력");
+				idx = arr.indexOf(str);
+				if(idx < 0){
+					res = str + "는(은) 없습니다."
+				} else {
+					res = str + "는(은) " + idx + "번째에 있습니다.";
+				}
+				document.querySelector('#result1').innerHTML = res;
+			}
+			function proc2(){
+				str = prompt("찾는 문자열 입력");
+				idx = arr.lastIndexOf(str);
+				if(idx < 0){
+					res = str + "는(은) 없습니다."; 				
+				} else {
+					res = str + "는(은) " + idx + "번째에 있습니다."; 				
+				}
+				document.querySelector('#result2').innerHTML = res;
+			}
+			function proc3(){
+				str = prompt("찾는 문자열 입력");
+				idx = 0;
+				res = str + "는(은) ";
+				
+				flag = true;
+				while(true){
+					idx = arr.indexOf(str, idx);
+					if(idx == -1){
+						break;
+					}
+					res += idx + "번째 ";
+					idx++;
+					flag = false;
+				}
+				if(flag){
+					res += "없습니다.";
+				} else {
+					res += "있습니다.";
+				}
+					
+				document.querySelector('#result3').innerHTML = res;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>요소 찾기</h3>
+			arr = ["사과", "바나나", "참외", "복숭아", "사과", "자두", "바나나"]<br>
+			indexOf(item, start) : item의 위치를 start위치부터 찾는다.<br>
+			lastIndexOf(item, start) : 마지막 item의 위치를 찾는다.<br>
+			<input type="button" value="indexOf" onclick="proc1()">
+			<input type="button" value="lastIndexOf" onclick="proc2()">
+			<input type="button" value="indexOf" onclick="proc3()">
+			<div id="result1"> </div>
+			<div id="result2"> </div>
+			<div id="result3"> </div>
+		</div>
+	</body>
+</html>
