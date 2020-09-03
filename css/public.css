@@ -31,7 +31,7 @@
 	background-color:#4284ed;
 	color:white;
 }
-.box #result1, .box .dd{
+.box div{
 	border:1px dotted blue;
 	padding:10px;
 	margin:5px;

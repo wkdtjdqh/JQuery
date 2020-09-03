@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			names = new Array();
+			function proc1(){
+				while(true){
+					name = prompt("이름을 입력하세요.");
+					
+					if(name == "" || name == null){
+						break;
+					}
+					names.push(name);
+				}
+				document.querySelector('#result1').innerHTML = names;
+			}
+			
+			function proc2(){
+				while(true){
+					name = prompt("이름을 입력하세요.");
+					
+					if(name == "" || name == null){
+						break;
+					}
+					
+					if(names.indexOf(name) != -1){
+						alert('해당 이름이 중복되었습니다. 다시입력하세요.');
+					} else {
+						names.push(name);
+					}
+				}
+				document.querySelector('#result2').innerHTML = names;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>연습1</h3>
+			사람 이름을 계속 입력받아 배열에 저장하고 그 저장된 이름을 출력하는 프로그램을 작성하시오<br>
+			입력 : prompt, 종료 : 공백문자나 취소버튼 클릭<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		<div class="box">
+			<h3>연습2</h3>
+			서로 중복되지 않은 정수 5개를 입력받아 출력하는 프로그램을 작성하시오.<br>
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="result2"></div>
+		</div>
+	</body>
+</html>

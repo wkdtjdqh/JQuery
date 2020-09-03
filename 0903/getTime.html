@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			now = new Date();
+			function proc1(){
+				myday = new Date("1995.09.19");
+				
+				// 두 날 사이에 간격을 구한다.
+				val = now.getTime() - myday.getTime();
+				// alert(val);
+				res = "태어난 날 : " + myday.toDateString() + "<br> 경과 " + (val/1000/60/60/24/365) + "년 / ";
+				res += (val/1000/60/60/24) + "일 / " + (val/1000/60/60) + "시 / " + (val/1000/60) + "분 / " + (val/1000) + "초<br>";
+				
+				document.querySelector('#result1').innerHTML = res;
+			}
+			
+			function proc2(){
+				invalue = document.querySelector('#inday').value;
+				invalue = new Date(invalue);
+				times = now.getTime() - invalue.getTime();
+				days = times / 1000 / 60 / 60 / 24;
+				
+				if(days < 0){
+					alert("선택 오류입니다.");
+					return;
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>경과일 구하기</h3>
+			getTime() : millisec의 값으로 리턴<br>
+			초 : millisec의 값 / 1000<br>
+			분 : millisec의 값 / 1000 / 60<br>
+			시간 : millisec의 값 / 1000 / 60 / 60<br>
+			일 : millisec의 값 / 1000 / 60 / 60 / 24<br>
+			년 : millisec의 값 / 1000 / 60 / 60 / 24 / 365<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		<div class="box">
+			<h3>경과일 구하기</h3>
+			구입 날짜 : <input type="date" id="inday">
+			<input type="button" value="확인" onclick="proc2()">
+			<div id="result2"></div>
+		</div>
+	</body>
+</html>

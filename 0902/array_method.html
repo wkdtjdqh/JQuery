@@ -5,7 +5,7 @@
 		<title>Insert title here</title>
 		<link href="../css/public.css" rel="stylesheet">
 		<style type="text/css">
-			#result1, #result2, #result3{
+			.box div{
 				border:1px dotted blue;
 				padding:10px;
 				margin:5px;
@@ -56,6 +56,48 @@
 					
 				document.querySelector('#result3').innerHTML = res;
 			}
+			
+			function pushPro(){
+				res = "push 전 배열 : " + arr + "<br>";
+				// 추가할 요소 입력
+				item = prompt("문자열 입력");
+				arr.push(item);
+				res += "push 후 배열 : " + arr + "<br>";
+				document.querySelector('#pushresult').innerHTML = res;
+			}
+			function popPro(){
+				res = "pop 전 배열 : " + arr + "<br>";
+				arr.pop();
+				res += "pop 후 배열 : " + arr + "<br>";
+				document.querySelector('#popresult').innerHTML = res;
+			}
+			
+			function slicePro(){
+				arr2 = arr.slice(3, 7);
+				res = "slice 전 배열 : " + arr + "<br>slice 후 배열 : " + arr2 + "<br>";
+				document.querySelector('#sliceresult').innerHTML = res;
+			}
+			function splicePro(){
+				res = "slice 전 배열 : " + arr + "<br>";
+				arr.splice(3, 4, "치킨", "족발", "보쌈", "해물파전");
+				res += "splice 후 배열 : " + arr + "<br>";
+				document.querySelector('#spliceresult').innerHTML = res;
+			}
+			
+			function concatPro(){
+				a = ["등심", "안심", "토시살", "우둔살", "살치살"];
+				arr2 = arr.concat(a);
+				res = "arr.length : " + arr.length + "<br>a.length : " + a.length + "<br>arr2.length : " + arr2.length + "<br>" + a;
+				document.querySelector('#concatresult').innerHTML = res;
+			}
+			function joinPro(){
+				arr2 = arr.join();	// arr2는 문자열
+				res = "arr.length : " + arr.length + "<br>arr2.length : " + arr2.length + "<br>";
+				for(i = 0; i < arr2.length; i++){
+					res += i + "번째 : " + arr2[i] + "<br>";
+				}
+				document.querySelector('#joinresult').innerHTML = res;
+			}
 		</script>
 	</head>
 	<body>
@@ -70,6 +112,36 @@
 			<div id="result1"> </div>
 			<div id="result2"> </div>
 			<div id="result3"> </div>
+		</div>
+		<div class="box">
+			<h3>배열에 추가, 삭제</h3>
+			arr = ["사과", "바나나", "참외", "복숭아", "사과", "자두", "바나나"]<br>
+			arr.push(item) : 배열의 맨 마지막으로 추가<br>
+			arr.pop() : 배열의 마지막 요소를 제거<br>
+			<input type="button" value="push" onclick="pushPro()">
+			<input type="button" value="pop" onclick="popPro()">
+			<div id="pushresult"> </div>
+			<div id="popresult"> </div>
+		</div>
+		<div class="box">
+			<h3>배열 추출, 수정</h3>
+			arr = ["사과", "바나나", "참외", "복숭아", "사과", "자두", "바나나"]<br>
+			arr.slice(start, end) : start ~ end-1 까지의 요소를 추출<br>
+			arr.splice(idx, n, a, b, ..) : idx에서 n개를 삭제하고 a, b, .. 를 추가<br>
+			<input type="button" value="slice" onclick="slicePro()">
+			<input type="button" value="splice" onclick="splicePro()">
+			<div id="sliceresult"> </div>
+			<div id="spliceresult"> </div>
+		</div>
+		<div class="box">
+			<h3>배열 합치기, 문자열 변환</h3>
+			arr = ["사과", "바나나", "참외", "복숭아", "사과", "자두", "바나나"]<br>
+			arr.concat(a) : arr배열과 a배열이 하나의 배열로 합<br>
+			arr.join() : arr배열을 문자열로 변환<br>
+			<input type="button" value="concat" onclick="concatPro()">
+			<input type="button" value="join" onclick="joinPro()">
+			<div id="concatresult"> </div>
+			<div id="joinresult"> </div>
 		</div>
 	</body>
 </html>
