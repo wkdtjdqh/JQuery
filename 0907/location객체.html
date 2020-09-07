@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			function proc1(){
+				// 현재 서버 포트가 80(기본)이기 때문에 hostname과 host와 같은 값을 가진다.
+				res = "href : " + location.href + "<br>hostname : " + location.hostname + "<br>host : " + location.host;
+				
+				document.getElementById('result1').innerHTML = res;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>Location객체</h3>
+			URL정보 얻기<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+	</body>
+</html>

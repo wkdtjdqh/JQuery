@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			function proc1(){
+				dres1 = document.getElementById('result1');
+				
+				setTimeout(function(){ 
+					dres1.style.background = 'white';
+				}, 500)
+			}
+			
+			function proc2(){
+				start = document.getElementById('start');
+				start.style.display = 'none';
+				end = document.getElementById('end');
+				end.style.display = 'inline';
+				
+				dres2 = document.getElementById('result2');
+				dres3 = document.body;
+				
+				a = setInterval(function(){
+					r = Math.floor(Math.random()*256);
+					g = Math.floor(Math.random()*256);
+					b = Math.floor(Math.random()*256);
+					
+					// 16진수로 형변환
+					cr = r.toString(16);
+					cg = g.toString(16);
+					cb = b.toString(16);
+					
+					dres2.style.background = 'rgb(' + r + ", " + g + ", " + b + ')';
+					dres3.style.background = '#' + cg + cr + cb;
+				}, 500)
+			}
+			
+			function proc3(){
+				start = document.getElementById('start');
+				start.style.display = 'inline';
+				end = document.getElementById('end');
+				end.style.display = 'none';
+				
+				clearInterval(a);
+			}
+			
+			function changecolor(){
+				document.getElementById('result2').style.background = 'black';
+			}
+		</script>
+	</head>
+	<body>
+		<body onload="changecolor()">
+		
+		<div class="box">
+			<h3>setTimeout</h3>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		<div class="box">
+			<h3>setInterval</h3>
+			dres2 = document.getElementById('result2');<br>
+			dres2 = document.body; : 브라우저의 색상을 변경한다.<br>
+			<input type="button" value="확인" id="start" onclick="proc2()">
+			<input type="button" value="종료" id="end" style="display:none;"onclick="proc3()">
+			<div id="result2"></div>
+		</div>
+	</body>
+</html>

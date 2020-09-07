@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			today = new Date();
+			
+			function proc1(){
+				nowtime = today.getTime();
+				
+				// 500일 ms
+				time500 = 1000 * 60 * 60 * 24 * 500;
+				
+				a = nowtime + time500;
+				
+				day500 = new Date(a);
+				
+				out = document.querySelector('#result1');
+				out.innerHTML = "오늘날짜 : " + today.toLocaleDateString() + "<br>500일 후 : " + day500.toLocaleDateString();
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>500일 후 계산</h3>
+			getTime에 의해 현재의 ms를 구하고 500일의 ms를 구한다.<br>
+			500일의 ms 구하는 식 : (1000 * 60 * 60 * 24) * 500<br>
+			현재의 ms와 500일의 ms를 더한 후 Date 객체를 생성한다.<br>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+	</body>
+</html>

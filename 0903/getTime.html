@@ -5,6 +5,11 @@
 		<title>Insert title here</title>
 		<link href="../css/public.css" rel="stylesheet">
 		<script type="text/javascript">
+		
+			window.onload = function(){
+				outres = document.querySelector('#result2');
+			}
+
 			now = new Date();
 			function proc1(){
 				myday = new Date("1995.09.19");
@@ -21,13 +26,26 @@
 			function proc2(){
 				invalue = document.querySelector('#inday').value;
 				invalue = new Date(invalue);
+				
+				res = "구입날짜 : " + invalue.toLocaleDateString() + "<br>";
+				res += "오늘날짜 : " + now.toLocaleDateString() + "<br>";
+				
 				times = now.getTime() - invalue.getTime();
 				days = times / 1000 / 60 / 60 / 24;
 				
 				if(days < 0){
 					alert("선택 오류입니다.");
+					outres.innerHTML = "";
 					return;
 				}
+				
+				if(days <= 7){
+					res += "교환/반품이 가능합니다.<br>";
+				} else{
+					res += "교환/반품이 불가능합니다.<br>";
+				}
+				
+				outres.innerHTML = res;
 				
 			}
 		</script>

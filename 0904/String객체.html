@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		
+		<script>
+			str = "우리나라 좋은나라 대한민국만세"
+			window.onload = function(){
+				out1 = document.querySelector('#result1');	
+				out2 = document.querySelector('#result2');	
+				out3 = document.querySelector('#result3');	
+				out4 = document.querySelector('#result4');	
+				out7 = document.querySelector('#result7');
+			}
+			function proc1(){
+				idx = str.length-1;
+				a = prompt("인덱스를 입력하세요. (0 ~ " + idx + ")");	
+				if(a > idx){
+					alert("인덱스 범위를 넘었습니다.");
+					out1.innerHTML = "";
+					return;
+				}
+				aa = str.charAt(a);
+				
+				out1.innerHTML = aa;
+			}
+			function proc2(){
+				idx = str.length-1;
+				a1 = prompt("시작 인덱스를 입력하세요. (0 ~ " + idx + ")");	
+				a2 = prompt("종료 인덱스를 입력하세요. (" + a1 + " ~ " + idx + ")");	
+				
+				if(a1 > idx || a2 > idx){
+					alert("인덱스 범위를 넘었습니다.");
+					out2.innerHTML = "";
+					return;
+				}
+				aa = str.slice(a1, a2);
+				
+				out2.innerHTML = aa;
+			}
+			function proc3(){
+				idx = str.length-1;
+				a1 = prompt("시작 인덱스를 입력하세요. (0 ~ " + idx + ")");	
+				a2 = prompt("종료 인덱스를 입력하세요. (" + a1 + " ~ " + idx + ")");	
+				
+				if(a1 > idx || a2 > idx){
+					alert("인덱스 범위를 넘었습니다.");
+					out2.innerHTML = "";
+					return;
+				}
+				a = str.substring(a1, a2);
+				out3.innerHTML = a;
+			}
+			function proc4(){
+				idx = str.length-1;
+				a1 = prompt("시작 인덱스를 입력하세요. (0 ~ " + idx + ")");	
+				a2 = prompt("종료 인덱스를 입력하세요. (" + a1 + " ~ " + idx + ")");	
+				
+				if(a1 > idx || a2 > idx){
+					alert("인덱스 범위를 넘었습니다.");
+					out2.innerHTML = "";
+					return;
+				}
+				a = str.substr(a1, a2);
+				out4.innerHTML = a;
+			}
+			function proc5(){
+				inputData = prompt("찾는 문자열을 입력하세요.");
+				
+				idx = "";
+				flag = true;
+				i=0;
+				while(true){
+					strIdx = str.indexOf(inputData, i);
+					if(strIdx == -1){
+						break;
+					}
+					idx += strIdx + "번째 ";
+					i = strIdx+1;
+					flag = false;
+				}
+				if(flag){
+					idx = inputData + " 문자열이 없습니다.";
+				} else {
+					idx += "에 있습니다.";
+				}
+				document.querySelector('#result5').innerHTML = idx;
+			}
+			function proc6(){
+				// 공백을 기준으로 문자열 분리
+				ss = str.split(" ");
+				res = "";
+				for(i=0; i<ss.length; i++){
+					res += i + "번째 : " + ss[i] + "<br>";
+				}
+				document.querySelector('#result6').innerHTML = res;
+			}
+			
+			function print(val){
+				if(val.length < 5 || val.length > 10){
+					alert(val + "를 5 ~ 10 사이로 입력하세요.");
+					chk = false;
+				}else{
+					res += val + "님 환영합니다.<br>";
+				}
+			}
+			function proc7(){
+				// 입력한 값을 가져온다 (5 ~ 10)
+				iv = document.querySelector('#id').value;
+				nv = document.querySelector('#name').value;
+				ivt = iv.trim();
+				nvt = nv.trim();
+				
+				res = "입력한 값 : " + iv + " 길이 : " + iv.length + "<br>공백제거 후 : " + ivt  + " 길이 : " + ivt.length + "<br>";
+				
+				chk = true;
+				print(ivt);
+				if(!chk){
+					out7.innerHTML = " ";
+					return;
+				}
+				chk = true;
+				print(nvt);
+				if(!chk){
+					out7.innerHTML = " ";
+					return;
+				}
+				
+				out7.innerHTML = res;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>String객체</h3>
+			str = "우리나라 좋은나라 대한민국 만세"<br>
+			charAt(index)<br>
+			slice(start, end)<br>
+			substring(start, end)<br>
+			substr(start, length)<br>
+			
+			<input type="button" value="charAt" onclick="proc1()">
+			<input type="button" value="slice" onclick="proc2()">
+			<input type="button" value="substring" onclick="proc3()">
+			<input type="button" value="substr" onclick="proc4()">
+			
+			<div id="result1"></div>
+			<div id="result2"></div>
+			<div id="result3"></div>
+			<div id="result4"></div>
+		</div>
+		<div class="box">
+			<h3>String객체</h3>
+			str = "우리나라 좋은나라 대한민국 만세"<br>
+			indexOf(index) : 나라 문자를 모두 검색하여 인덱스를 구한다.<br>			
+			<input type="button" value="indexOf" onclick="proc5()">
+			
+			<div id="result5"></div>
+		</div>
+		<div class="box">
+			<h3>String객체</h3>
+			split("구분자", limit) : 한 문자열에서 구분자를 기준으로 문자열을 분리한다.<br>
+			문자열로 분리하여 배열을 생성한다.<br>
+			limit : 구분되는 문자의 개수<br>
+			str 문자열에서 공백을 기준으로 분리하여 배열로 저장한다<br>
+			ss = str.split(" ")<br>
+			<input type="button" value="split" onclick="proc6()">
+			
+			<div id="result6"></div>
+		</div>
+		<div class="box">
+			<h3>String객체</h3>
+			trim() : 문자열에서 앞뒤 공백을 제거한다.<br>
+			아이디 : <input type="text" id="id"><br>
+			이름 : <input type="text" id="name"><br>
+			<input type="button" value="trim" onclick="proc7()">
+			
+			<div id="result7"></div>
+		</div>
+	</body>
+</html>

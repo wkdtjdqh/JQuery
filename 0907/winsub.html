@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			function proc1(){
+				opener.document.getElementById('result1').textContent = document.querySelector('#name').value;
+				close();
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>window sub 창입니다.</h3>
+			입력받은 이름을 부모창에 출력합니다.<br>
+			부모창을 나타내는 속성 : opener<br>
+			이름 <input type="text" id="name">
+			<input type="button" value="확인" onclick="proc1()">
+		</div>
+	</body>
+</html>
