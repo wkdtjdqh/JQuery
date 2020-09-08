@@ -8,6 +8,7 @@
 			function proc1(){
 				// 현재 서버 포트가 80(기본)이기 때문에 hostname과 host와 같은 값을 가진다.
 				res = "href : " + location.href + "<br>hostname : " + location.hostname + "<br>host : " + location.host;
+				res += "<br>port : " + location.port + "<br>protocol : " + location.protocol + "<br>pathname : " + location.pathname;
 				
 				document.getElementById('result1').innerHTML = res;
 			}

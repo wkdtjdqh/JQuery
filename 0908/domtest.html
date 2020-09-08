@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			function proc1(){
+				//ultag = document.getElementsByName('ul')[0];
+				ultag = document.querySelector('ul');
+				
+				allitem = ultag.getElementsByTagName('li');
+				
+				res = "";
+				out = document.querySelector('#result1');
+				for(i=0; i<allitem.length; i++){
+					res += allitem[i].firstChild.data + "<br>";	//firstChild = Object
+				}
+				out.innerHTML = res;
+			}
+			function proc2(){
+				ultag = document.querySelectorAll('ul')[1];
+				allitem = ultag.querySelectorAll('li');
+				
+				for(i=0; i<allitem.length; i++){
+					imgdata = allitem[i].firstChild.data;
+					
+					imgtag = document.createElement('img');
+					//<img src="">
+					imgtag.src = "../img/" + imgdata + ".jpg";
+					allitem[i].appendChild(imgtag);
+				}
+			}
+			function proc3(li){
+				//li : 클릭한 li
+				imgdata = li.firstChild.data;
+			
+				imgtag = document.createElement("img");
+				imgtag.src = "../img/" + imgdata + ".jpg";
+				li.appendChild(imgtag);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3></h3>
+			각 item 요소의 text data 가져오기.<br>
+			<ul>
+				<li>List item1</li>
+				<li>List item2</li>
+				<li>List item3</li>
+				<li>List item4</li>
+				<li>List item5</li>
+			</ul>
+			<input type="button" value="확인" onclick="proc1()">
+			<div id="result1"></div>
+		</div>
+		<div class="box">
+			<h3>새로운 이미지 생성</h3>
+			버튼을 클릭하면 각 요소에 해당하는 이미지를 생성해서 추가한다.<br>
+			<ul>
+				<li>cat1</li>
+				<li>cat2</li>
+				<li>cat3</li>
+				<li>cat4</li>
+				<li>cat5</li>
+			</ul>
+			<input type="button" value="확인" onclick="proc2()">
+		</div>
+		<div class="box">
+			<h3>새로운 이미지 생성</h3>
+			각 item 요소를 클릭하면 이미지 요소를 생성해서 추가한다.<br>
+			<ul>
+				<li onclick="proc3(this)">cat1</li>
+				<li onclick="proc3(this)">cat2</li>
+				<li onclick="proc3(this)">cat3</li>
+				<li onclick="proc3(this)">cat4</li>
+				<li onclick="proc3(this)">cat5</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			str = ["고양이", "강아지", "미어캣", "고슴도치", "늑대", "표범", "퓨마"];
+			function addProc(){
+				rand = Math.floor(Math.random() * str.length);
+				txt = document.createTextNode(str[rand]);
+				
+				ptag = document.createElement('p');
+				ptag.appendChild(txt);
+				
+				out = document.querySelector('#result1');
+				out.appendChild(ptag);
+			}
+			function delProc(){
+				// 삭제대상의 부모를검색
+				parent = document.querySelector('#result1');
+				// 삭제대상을 선택
+				child = parent.lastChild;
+				// 부모요소에서 자식요소를 삭제
+				parent.removeChild(child);				
+			}
+			function proc1(){
+				str = ["고양이", "강아지", "미어캣", "고슴도치", "늑대", "표범", "퓨마"];
+				rand = Math.floor(Math.random() * str.length);
+				txt = document.createTextNode(str[rand]);
+				
+				but = document.createElement('input');
+				but.type = "button";
+				but.value = "삭제";
+				ptag = document.createElement('p');
+				
+				ptag.appendChild(txt);
+				ptag.appendChild(but);
+				
+				out = document.querySelector('#result2');
+				out.appendChild(ptag);
+
+				but.click = function(){
+				상쿠핑쿠상쿠핑쿠상쿠핑쿠상쿠핑쿠상쿠핑두상쿠핑쿠상쿠핑쿠	
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>추가/삭제</h3>
+			추가버튼을 클릭하면 랜덤으로 텍스트를 생성한다.<br> - txt = createTextNode("hello")<br>
+			p태그를 생성해서 p태그에 텍스트를 추가한다.<br>
+			- ptag = createElement('p')<br>
+			- ptag.appendChild(txt)<br>
+			p태그를 result1에 추가한다.<br> - out.appendChild(ptag)<br>
+			<input type="button" value="추가" onclick="addProc()">
+			<input type="button" value="삭제" onclick="delProc()">
+			<div id="result1"></div>
+		</div>
+		<div class="box">
+			<h3>추가/삭제</h3>
+			추가버튼을 클릭하면 랜덤으로 텍스트를 생성한다.<br> 
+			- txt = createTextNode("hello")<br>
+			- 삭제버튼을 생성한다. but = document.createElement('button')<br>
+			p태그를 생성해서 p태그에 텍스트를 추가한다.<br>
+			- ptag = createElement('p')<br>
+			- ptag.appendChild(txt)<br>
+			- ptag.appendChild(but)<br>
+			p태그를 result1에 추가한다.<br> - out.appendChild(ptag)<br>
+			<input type="button" value="추가" onclick="proc1()">
+			<div id="result2"></div>
+		</div>
+	</body>
+</html>
