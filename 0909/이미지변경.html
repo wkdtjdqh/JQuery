@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link href="../css/public.css" rel="stylesheet">
+		<script type="text/javascript">
+			function proc1(){
+				vimg = document.querySelector('img');
+				vsrc = vimg.src	//src를 가져올 때는 http부터 모든 경로를 가져오게 된다.
+				if(vsrc.match("off") == null){
+					vimg.src = "../img/sw_off.png";
+				} else {
+					vimg.src = "../img/sw_on.png";
+				};
+			}
+			function proc2(){
+				myArr = new Array("가위_좌", "바위_좌", "보_좌");
+				comArr = new Array("가위_우", "바위_우", "보_우");
+				
+				select = prompt("가위바위보", "가위, 바위, 보");
+				
+				if(select == "가위"){
+					val = myArr[0];
+				} else if(select == "바위"){
+					val = myArr[1];
+				} else {
+					val = myArr[2];
+				}
+				myRand = val;
+				comRand = comArr[Math.floor(Math.random()*3)];
+				
+				myimg = document.querySelectorAll('img')[1];
+				comimg = document.querySelectorAll('img')[2];
+
+				myimg.src = "../img/" + myRand + ".PNG";
+				comimg.src = "../img/" + comRand + ".PNG";
+				
+				print = document.querySelector('#result1');
+				if(myRand == "가위_좌" && comRand == "보_우" || myRand == "바위_좌" && comRand == "가위_우" || myRand == "보_좌" && comRand == "바위_우"){
+					res = "결과 : 당신 승!!";
+				} else if(myRand == "가위_좌" && comRand == "바위_우" || myRand == "바위_좌" && comRand == "보_우" || myRand == "보_좌" && comRand == "가위_우"){
+					res = "결과 : 당신 패배!!";
+				} else {
+					res = "결과 : 비겼습니다!!";
+				}
+				print.innerHTML = res;
+			}
+		</script>
+		<style type="text/css">
+			.box div, .box td{
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3>이미지변경 - 가위바위보</h3>
+			src의 속성값을 바꾼다<br>
+			match()를 이용해서 해당 문자열의 존재여부를 검색한다.<br>
+			해당 문자열이 있다면 배열을 반환하고 없으면 null을 반환한다.<br>
+			src를 가져올 때 http부터 모든 경로를 가져오기 때문에 해당 문자열에 match()를 이용한다.<br>
+			<img src="../img/sw_off.png" alt="스위치off" onclick="proc1()">
+		</div>
+		<div class="box">
+			<h3>이미지변경</h3>
+			<table border="1">
+				<tr><td colspan="2"><input type="button" value="게임시작" onclick="proc2()"></td></tr>
+				<tr><td>사 람</td><td>컴 퓨 터</td></tr>
+				<tr><td><img src="../img/바위_좌.PNG"></td><td><img src="../img/바위_우.PNG"></td></tr>
+				<tr><td colspan="2"><div id="result1"></div></td></tr>
+			</table>
+		</div>
+	</body>
+</html>

@@ -32,6 +32,10 @@
 				but = document.createElement('input');
 				but.type = "button";
 				but.value = "삭제";
+				but.onclick = function(){
+					this.parentNode.remove();
+				}
+				
 				ptag = document.createElement('p');
 				
 				ptag.appendChild(txt);
@@ -40,9 +44,6 @@
 				out = document.querySelector('#result2');
 				out.appendChild(ptag);
 
-				but.click = function(){
-				상쿠핑쿠상쿠핑쿠상쿠핑쿠상쿠핑쿠상쿠핑두상쿠핑쿠상쿠핑쿠	
-				}
 			}
 		</script>
 	</head>
